@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
@@ -52,4 +52,6 @@ public class Student {
     public void setAge(int age) {
         this.age = age;
     }
+
+
 }

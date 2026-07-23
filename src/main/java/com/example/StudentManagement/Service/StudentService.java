@@ -14,21 +14,23 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepo;
 
-    public String createStudent(Student student){
-        studentRepo.save(student);
-        return "Student data created successfully";
+    public Student createStudent(Student student){
+        Student student1 = studentRepo.save(student);
+        return student1;
     }
     public List<Student> getAllStudents(){
         return studentRepo.findAll();
     }
+
     public String getStudentById(Long id){
-        Optional<Student> student=studentRepo.findById(id);
-        if(student.isPresent()){
+        Optional<Student> student1=studentRepo.findById(id);
+        if(student1.isPresent()){
             return "Student found";
         }
         else{
-            return "Student not found ";
+            return "student not found";
         }
+
     }
     public String updateFullStudent(Long id,Student student){
         Optional<Student> student1=studentRepo.findById(id);

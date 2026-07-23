@@ -18,7 +18,8 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/create")
-    public String createStudent(@RequestBody Student student){
+    public Student createStudent(@RequestBody Student student){
+
         return studentService.createStudent(student);
     }
     @GetMapping("/getAll")
@@ -26,20 +27,22 @@ public class StudentController {
         return studentService.getAllStudents();
 
     }
-    @GetMapping("/getStudent")
+    @GetMapping("/getStudent/{id}")
     public String getStudentById(@PathVariable Long id){
+
         return studentService.getStudentById(id);
     }
-    @PutMapping("/fullUpdation")
+    @PutMapping("/fullUpdation/{id}")
     public String updateFullDetails(@PathVariable Long id,@RequestBody Student student){
         return studentService.updateFullStudent(id, student);
     }
-    @PatchMapping("/partialUpdation")
+    @PatchMapping("/partialUpdation/{id}/{age}")
     public String updatePartialDetails(@PathVariable Long id, @PathVariable int age){
         return studentService.updatePartialStudent(id, age);
     }
-    @DeleteMapping("/deleteStudent")
+    @DeleteMapping("/deleteStudent/{id}")
     public String deleteStudent(@PathVariable Long id){
+
         return studentService.deleteStudent(id);
     }
 
