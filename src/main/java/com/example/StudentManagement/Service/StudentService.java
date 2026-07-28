@@ -12,8 +12,6 @@ import java.util.Optional;
 public class StudentService {
 
     @Autowired
-    //Student REpository reference
-    //Student REpository reference2
     private StudentRepository studentRepo;
 
     public Student createStudent(Student student){
