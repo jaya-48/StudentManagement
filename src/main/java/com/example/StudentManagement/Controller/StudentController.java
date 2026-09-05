@@ -6,6 +6,7 @@ import com.example.StudentManagement.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+//http://localhost:8085/StudentManagement/getAll
 import java.util.List;
 @RestController
 @RequestMapping("/StudentManagement")
